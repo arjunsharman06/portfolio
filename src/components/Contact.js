@@ -44,10 +44,10 @@ const Contact = () => {
     if (!errorMessage) {
       emailjs
         .sendForm(
-          process.env.SERVICE_ID,
-          process.env.TEMPLATE_ID,
+          process.env.REACT_APP_SERVICE_ID,
+          process.env.REACT_APP_TEMPLATE_ID,
           e.target,
-          process.env.PUBLIC_KEY
+          process.env.REACT_APP_PUBLIC_KEY
         )
         .then(
           (result) => {

@@ -2,11 +2,11 @@ import React from 'react';
 import quizWizzard from '../assets/portfolio/quizWizzard.jpg';
 import weatherDashboard from '../assets/portfolio/weatherDashboard.jpg';
 import photoPort from '../assets/portfolio/photoPort.jpg';
-import musicBox from '../assets/portfolio/musicBox.jpg';
+// import musicBox from '../assets/portfolio/musicBox.jpg';
 import workSchedular from '../assets/portfolio/workSchedular.jpg';
 import socialNetwork from '../assets/portfolio/socialNetwork.jpg';
 import textEditor from '../assets/portfolio/textEditor.jpg';
-import bookSerach from '../assets/portfolio/bookSerach.jpg';
+// import bookSerach from '../assets/portfolio/bookSerach.jpg';
 
 const Portfolio = () => {
   const portfolios = [

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { validateEmail, capitalizeFirstLetter } from '../utils/helpers';
 import emailjs from '@emailjs/browser';
 

@@ -9,6 +9,8 @@ import graphql from '../assets/graphql.png';
 import github from '../assets/github.png';
 import tailwind from '../assets/tailwind.png';
 import nodejs from '../assets/nodejs.png';
+import express from '../assets/express.png';
+import mongodb from '../assets/mongodb.png';
 
 const Experience = () => {
   const techs = [
@@ -65,6 +67,18 @@ const Experience = () => {
       src: nodejs,
       title: 'Node Js',
       style: 'shadow-green-400',
+    },
+    {
+      id: 10,
+      src: express,
+      title: 'Express',
+      style: 'shadow-yellow-400',
+    },
+    {
+      id: 11,
+      src: mongodb,
+      title: 'MongoDB',
+      style: 'shadow-orange-400',
     },
   ];
 

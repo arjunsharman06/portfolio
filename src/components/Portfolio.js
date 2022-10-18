@@ -5,6 +5,8 @@ import photoPort from '../assets/portfolio/photoPort.jpg';
 import musicBox from '../assets/portfolio/musicBox.jpg';
 import workSchedular from '../assets/portfolio/workSchedular.jpg';
 import socialNetwork from '../assets/portfolio/socialNetwork.jpg';
+import textEditor from '../assets/portfolio/textEditor.jpg';
+import bookSerach from '../assets/portfolio/bookSerach.jpg';
 
 const Portfolio = () => {
   const portfolios = [
@@ -28,9 +30,9 @@ const Portfolio = () => {
     },
     {
       id: 4,
-      src: musicBox,
-      demo: 'https://beca-d.github.io/music-box/',
-      git: 'https://github.com/arjunsharman06/music-box',
+      src: textEditor,
+      demo: 'https://frozen-sands-72166.herokuapp.com/',
+      git: 'https://github.com/arjunsharman06/pwa-text-editor',
     },
     {
       id: 5,
@@ -41,7 +43,7 @@ const Portfolio = () => {
     {
       id: 6,
       src: socialNetwork,
-      demo: 'https://user-images.githubusercontent.com/14013884/188538283-3d07f136-89db-42e2-98be-d604c3b20e03.mp4',
+      demo: 'https://frozen-sands-72166.herokuapp.com/',
       git: 'https://github.com/arjunsharman06/social-network-api',
     },
   ];

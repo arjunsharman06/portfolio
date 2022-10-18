@@ -1,20 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { validateEmail, capitalizeFirstLetter } from '../utils/helpers';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
     message: '',
+    show: false,
   });
-  const { name, email, message } = formState;
 
+  const { name, email, message, show } = formState;
+  const form = useRef();
   const [errorMessage, setErrorMessage] = useState('');
+
   function handleChange(e) {
+    if (show) {
+      setFormState({ show: false });
+    }
+
     if (e.target.name === 'email') {
       const isValid = validateEmail(e.target.value);
-
-      console.log(isValid);
       // isValid conditional statement
       if (!isValid) {
         setErrorMessage('Your email is invalid.');
@@ -33,10 +39,33 @@ const Contact = () => {
     }
   }
 
-  function handleSubmit(e) {
+  const sendEmail = (e) => {
     e.preventDefault();
-    console.log(formState);
-  }
+    if (!errorMessage) {
+      emailjs
+        .sendForm(
+          process.env.SERVICE_ID,
+          process.env.TEMPLATE_ID,
+          e.target,
+          process.env.PUBLIC_KEY
+        )
+        .then(
+          (result) => {
+            setFormState({
+              ...formState,
+              name: '',
+              email: '',
+              message: '',
+              show: true,
+            });
+            e.target.reset();
+          },
+          (error) => {
+            setErrorMessage(error.text);
+          }
+        );
+    }
+  };
   return (
     <div
       name='contact'
@@ -53,8 +82,9 @@ const Contact = () => {
         <div className=' flex justify-center items-center'>
           <form
             id='contact-form'
-            onSubmit={handleSubmit}
             className=' flex flex-col w-full md:w-1/2'
+            ref={form}
+            onSubmit={sendEmail}
           >
             <input
               type='text'
@@ -87,7 +117,18 @@ const Contact = () => {
                 </p>
               </div>
             )}
-            <button className='text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300'>
+            {show && (
+              <div id='success'>
+                <p className='text-green-400'>
+                  {capitalizeFirstLetter('Message Send')}
+                </p>
+              </div>
+            )}
+            <button
+              className='text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300'
+              value='Send'
+              onSubmit={handleChange}
+            >
               Let's talk
             </button>
           </form>

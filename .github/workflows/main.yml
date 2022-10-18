@@ -1,7 +1,9 @@
-name: CI
+name: C2
 
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - master
   
 jobs:
   build:

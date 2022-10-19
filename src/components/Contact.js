@@ -1,24 +1,17 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { validateEmail, capitalizeFirstLetter } from '../utils/helpers';
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
     message: '',
-    show: false,
   });
 
   const { name, email, message, show } = formState;
-  const form = useRef();
   const [errorMessage, setErrorMessage] = useState('');
 
   function handleChange(e) {
-    if (show) {
-      setFormState({ show: false });
-    }
-
     if (e.target.name === 'email') {
       const isValid = validateEmail(e.target.value);
       // isValid conditional statement
@@ -39,33 +32,6 @@ const Contact = () => {
     }
   }
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    if (!errorMessage) {
-      emailjs
-        .sendForm(
-          process.env.REACT_APP_SERVICE_ID,
-          process.env.REACT_APP_TEMPLATE_ID,
-          e.target,
-          process.env.REACT_APP_PUBLIC_KEY
-        )
-        .then(
-          (result) => {
-            setFormState({
-              ...formState,
-              name: '',
-              email: '',
-              message: '',
-              show: true,
-            });
-            e.target.reset();
-          },
-          (error) => {
-            setErrorMessage(error.text);
-          }
-        );
-    }
-  };
   return (
     <div
       name='contact'
@@ -83,8 +49,8 @@ const Contact = () => {
           <form
             id='contact-form'
             className=' flex flex-col w-full md:w-1/2'
-            ref={form}
-            onSubmit={sendEmail}
+            action='https://getform.io/f/039a0fa5-2ea6-47c3-bbdb-2e5d3e500b88'
+            method='POST'
           >
             <input
               type='text'

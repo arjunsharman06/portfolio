@@ -11,7 +11,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
     strategy:
       matrix:
         node-version: [14.x, 16.x, 18.x]
@@ -23,11 +23,11 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        cache: 'npm'     
+         
+    - run: npm i
+    - run: npm run build
       env: 
          REACT_APP_SERVICE_ID : ${{REACT_APP_SERVICE_ID}}
          REACT_APP_TEMPLATE_ID : ${{REACT_APP_TEMPLATE_ID}}
          REACT_APP_PUBLIC_KEY : ${{REACT_APP_PUBLIC_KEY}}
-         
-    - run: npm i
-    - run: npm run build

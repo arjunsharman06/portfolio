@@ -1,14 +1,12 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.de159dad.css",
-    "main.js": "/portfolio/static/js/main.4a2bebd3.js",
+    "main.js": "/portfolio/static/js/main.b179ac60.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/photoPort.jpg": "/portfolio/static/media/photoPort.5fd8c251fd57837fbef3.jpg",
-    "static/media/musicBox.jpg": "/portfolio/static/media/musicBox.6dc42600c3377e69a04d.jpg",
     "static/media/socialNetwork.jpg": "/portfolio/static/media/socialNetwork.c5dfa24930660000b9db.jpg",
     "static/media/weatherDashboard.jpg": "/portfolio/static/media/weatherDashboard.c0a62af2271d08e56a3b.jpg",
     "static/media/graphql.png": "/portfolio/static/media/graphql.fc6b9451733c620ceb86.png",
-    "static/media/bookSerach.jpg": "/portfolio/static/media/bookSerach.e4ee74fdfe5ccc51f38f.jpg",
     "static/media/workSchedular.jpg": "/portfolio/static/media/workSchedular.56a7bdf9611073df6830.jpg",
     "static/media/quizWizzard.jpg": "/portfolio/static/media/quizWizzard.acaaf1119a5d24ebd1f7.jpg",
     "static/media/profileImage.jpg": "/portfolio/static/media/profileImage.df033d03f8839d521d49.jpg",
@@ -22,11 +20,11 @@
     "static/media/javascript.png": "/portfolio/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
     "index.html": "/portfolio/index.html",
     "main.de159dad.css.map": "/portfolio/static/css/main.de159dad.css.map",
-    "main.4a2bebd3.js.map": "/portfolio/static/js/main.4a2bebd3.js.map",
+    "main.b179ac60.js.map": "/portfolio/static/js/main.b179ac60.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.de159dad.css",
-    "static/js/main.4a2bebd3.js"
+    "static/js/main.b179ac60.js"
   ]
 }

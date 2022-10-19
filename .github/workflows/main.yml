@@ -22,8 +22,9 @@ jobs:
          
     - run: npm i
     - run: npm run build
+    - run: npm run deploy
     - run: node -e "console.log(process.env.REACT_APP_PUBLIC_KEY)"
     env:
       REACT_APP_SERVICE_ID: ${{secrets.REACT_APP_SERVICE_ID}}
       REACT_APP_TEMPLATE_ID: ${{secrets.REACT_APP_TEMPLATE_ID}}
-      REACT_APP_PUBLIC_KEY: ${{secrets.REACT_APP_PUBLIC_KEY}}
+      REACT_APP_PUBLIC_KEY: ${{secrets.REACT_APP_PUBLIC_KEY}}  

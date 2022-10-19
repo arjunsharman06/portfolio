@@ -21,11 +21,11 @@ jobs:
         cache: 'npm'     
          
     - run: npm i
-    - run: npm run build
-    - run: npm run deploy
+    - run: npm run build   
     - run: |
        git config --global user.email "arjunsharman06@gmail.com"
        git config --global user.name "Arjun Sharman"
+    - run: npm run deploy
     env:
       REACT_APP_SERVICE_ID: ${{secrets.REACT_APP_SERVICE_ID}}
       REACT_APP_TEMPLATE_ID: ${{secrets.REACT_APP_TEMPLATE_ID}}

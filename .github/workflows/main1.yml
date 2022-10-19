@@ -11,11 +11,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v3
@@ -27,5 +22,5 @@ jobs:
          
     - run: npm i
     - run: npm run build
-    - run: echo  ${{env.REACT_APP_SERVICE_ID}}
+    - run: echo  ${{secrets.REACT_APP_SERVICE_ID}}
      

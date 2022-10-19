@@ -23,7 +23,9 @@ jobs:
     - run: npm i
     - run: npm run build
     - run: npm run deploy
-    - run: node -e "console.log(process.env.REACT_APP_PUBLIC_KEY)"
+    - run: |
+       git config --global user.email "arjunsharman06@gmail.com"
+       git config --global user.name "Arjun Sharman"
     env:
       REACT_APP_SERVICE_ID: ${{secrets.REACT_APP_SERVICE_ID}}
       REACT_APP_TEMPLATE_ID: ${{secrets.REACT_APP_TEMPLATE_ID}}

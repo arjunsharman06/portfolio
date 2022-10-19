@@ -22,5 +22,5 @@ jobs:
          
     - run: npm i
     - run: npm run build
-    - run: echo  ${{secrets.REACT_APP_SERVICE_ID}}
+    - run: echo  secrets.REACT_APP_SERVICE_ID
      

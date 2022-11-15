@@ -40,7 +40,7 @@ const SocialLinks = () => {
           Resume <BsFillPersonLinesFill size={30} />
         </>
       ),
-      href: 'Arjun_Sharman.pdf',
+      href: 'https://drive.google.com/file/d/1rTN3V-2dHuzEkYWc7vhAtmHzCb6wpe1O/view?usp=share_link',
       style: 'rounded-br-md',
       download: true,
     },

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-scroll';
+import ReactTooltip from 'react-tooltip';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -8,23 +9,33 @@ const NavBar = () => {
   const links = [
     {
       id: 1,
-      link: 'home',
+      name: 'home',
+      link: '/home',
     },
     {
       id: 2,
-      link: 'about',
+      name: 'about',
+      link: '/about',
     },
     {
       id: 3,
-      link: 'portfolio',
+      name: 'portfolio',
+      link: '/portfolio',
     },
     {
       id: 4,
-      link: 'experience',
+      name: 'experience',
+      link: '/experience',
     },
     {
       id: 5,
-      link: 'contact',
+      name: 'contact',
+      link: '/contact',
+    },
+    {
+      id: 6,
+      name: 'resume',
+      link: 'https://drive.google.com/file/d/1rTN3V-2dHuzEkYWc7vhAtmHzCb6wpe1O/view?usp=share_link',
     },
   ];
 
@@ -35,14 +46,26 @@ const NavBar = () => {
       </div>
 
       <ul className='hidden md:flex'>
-        {links.map(({ id, link }) => (
+        {links.map(({ id, link, name }) => (
           <li
+            data-tip={name}
+            data-for={name}
+            data-place='bottom'
+            id={name}
             key={id}
             className='px-4 cursor-pointer capitalize font-medium text-white-500 hover:scale-105 duration-200'
           >
-            <Link to={link} smooth duration={500}>
-              {link}
-            </Link>
+            <ReactTooltip id={name} />
+            {name !== 'resume' ? (
+              <Link to={link} duration={500}>
+                {' '}
+                {name}
+              </Link>
+            ) : (
+              <a rel='noopener noreferrer' href={link} target='_blank'>
+                {name}
+              </a>
+            )}
           </li>
         ))}
       </ul>
@@ -56,19 +79,26 @@ const NavBar = () => {
 
       {nav && (
         <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500'>
-          {links.map(({ id, link }) => (
+          {links.map(({ id, link, name }) => (
             <li
               key={id}
               className='px-4 cursor-pointer capitalize py-6 text-4xl'
             >
-              <Link
-                onClick={() => setNav(!nav)}
-                to={link}
-                smooth
-                duration={500}
-              >
-                {link}
-              </Link>
+              {name !== 'resume' ? (
+                <Link
+                  to={link}
+                  smooth
+                  duration={500}
+                  onClick={() => setNav(!nav)}
+                >
+                  {' '}
+                  {name}
+                </Link>
+              ) : (
+                <a rel='noopener noreferrer' href={link}>
+                  {name}
+                </a>
+              )}
             </li>
           ))}
         </ul>
